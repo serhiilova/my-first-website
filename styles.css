@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.grid-container > *:not(header) {
+    border: 1px solid green;
+    background-color: beige;
+    padding: 10px;
+}
+
+header {
+    background-image: url("images/nebo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: padding-box;
+    border: 2px solid rgb(140, 30, 175);
+}
+
+header h1 {
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    padding: 25px 0;
+}
+
+nav ul li:hover {
+    background-color: rgb(223, 81, 71);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        'titlefoto infotitle'
+        'myfoto mylist';
+    column-gap: 20px;
+}
+
+main img {
+    grid-area: myfoto;
+    max-width: 100%;
+    height: auto;
+    border: 5px double #04AA6D;
+    border-radius: 10px;
+}
+
+.fototitle {
+    grid-area: titlefoto;
+    text-align: center;
+}
+
+.infotitle {
+    grid-area: infotitle;
+    text-align: center;
+}
+
+main ul {
+    grid-area: mylist;
+}
+
+.jahta {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.jahta img {
+    width: 100%;
+    height: auto;
+    display:block;
+}
+
+.mria {
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+}
+
+@media(min-width: 600px) {
+    header {
+        grid-column:1 / span 2;
+    }
+
+    nav {
+        grid-column:1 / span 2;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap:10px;
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+        flex: 1
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        grid-column: 1;
+    }
+
+    .jahta {
+        grid-column: 2;
+    }
+
+    footer {
+       grid-column:1 / span 2;
+    }
+}
+
+
+
+
+
